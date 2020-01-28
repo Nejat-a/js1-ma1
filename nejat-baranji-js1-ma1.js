@@ -15,7 +15,7 @@ const paragraphs = document.querySelectorAll("p");
 // question 6
 const resultsContainer = document.querySelector(".results");
 resultsContainer.innerHTML = `<p>New paragraph</p>`;
-// question 7
+// question 7, 8, 9 and 10
 const cats = [
   {
     name: "Blob",
@@ -29,33 +29,25 @@ const cats = [
     age: 21
   }
 ];
-function catArrayFunction(catArray) {
-  for (let i = 0; i < catArray.length; i++) {
-    console.log(catArray[i].name);
-  }
-}
-catArrayFunction(cats);
-// question 8
-function wrapNames(catNames) {
-    let newHTML = "";
-    for (let i = 0; i < catNames.length; i++) {
-        let newElement = catNames[i];
-        newHTML+=`<h5>${newElement.name}</h5>`;
-        }
-        return newHTML;
-  }
-// question 9
-wrapNames(cats);
-function wrapNames(catNames) {
-    let newHTML = "";
-    for (let i = 0; i < catNames.length; i++) {
-        let newElement = catNames[i];
-        newHTML+=`<h5>${newElement.name}</h5>`;
-        }
-        newHTML = resultsContainer.innerHTML;
-        return newHTML;
-  }
-// question 10 
 
-// question
-// question
+function printName(catArray) {
+  let catInfo = "";
+  let newHTML = "";
+  let catAge = "";
+  for (let i = 0; i < catArray.length; i++) {
+    let catAge = catArray[i].age;
+    if (catAge) {
+      catArray[i].age;
+    } else {
+      catAge = "Age is unknown";
+    }
+    catInfo = `<div>
+                <h5>${catArray[i].name}</h5>
+                <p>${catAge}</p>
+              </div>`;
+    newHTML += catInfo;
+  }
+  return newHTML;
+}
+printName(cats);
+resultsContainer.innerHTML = printName(cats);
